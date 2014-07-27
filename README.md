@@ -28,6 +28,8 @@ After merging testing and training, I added labels to the data and also made sur
 The script will then create a clean data set that contains the names of all the columns per test subject and activity.
 After this step we write this data set into a file called cleanData.txt which is stored in the cloned rep "Project" which is then pused to GITHUB
 
+The final result is stored in the cleanData.txt file and its is submitted on Coursera assignment page. 
+
 The Code Book
 -------------------
 I have also added a CodeBook.md file which explains the details about data and variables used in the completion of this script.
