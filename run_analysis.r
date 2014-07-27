@@ -25,10 +25,10 @@ features[,2] = gsub('-std', 'Std', features[,2])
 features[,2] = gsub('[-()]', '', features[,2])
 
 
-# Get only the data on mean and std. dev.
+# Get only the data on mean and std. dev. and store it as colsReg - required number of columns.
 colsReq <- grep(".*Mean.*|.*Std.*", features[,2])
 
-# First reduce the features table to colsReq
+# First reduce the features table to the required columns as defined by "colsReq"
 features <- features[colsReq,]
 
 # Add the last two columns "subject" and "activity"
@@ -51,7 +51,12 @@ commonData$activity <- as.factor(commonData$activity)
 commonData$subject <- as.factor(commonData$subject)
 
 cleanData = aggregate(commonData, by=list(activity = commonData$activity, subject=commonData$subject), mean)
-# Remove the subject and activity column, since a mean of those has no use
+# Remove the subject and activity column,
+
 cleanData[,90] = NULL
 cleanData[,89] = NULL
+
+# Write the tidy data into the file cleanData.txt and store in the working dir
+# add "\t" to make it tab deliminated.
+
 write.table(cleanData, "cleanData.txt", sep="\t")
