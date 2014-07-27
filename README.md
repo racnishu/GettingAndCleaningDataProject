@@ -21,6 +21,7 @@ I downloaded the complete data set from the assignments page and stored it on my
 Also created a rep on GIThb and cloned it in the same location names as project- used this dir to submit final results and run_analysis.R file.
 
 Run_Analysis.R 
+----------------
 
 The script run_analysis.R will first merge the test and training sets together.
 After merging testing and training, I added labels to the data and also made sure that only those columns that have to do with mean and standard deviation are kept.
